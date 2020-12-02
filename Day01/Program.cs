@@ -15,7 +15,7 @@ namespace Assignement01
             Employee o3 = new Employee();
 
             
-            Console.WriteLine(o1.EMNO+" "+o1.NAME + " " +o1.BASIC + " " +o1.DEPTNO);
+            Console.WriteLine(o1.EMNO+" "+o1.NAME + " " +o1.BASIC + " " +o1.DEPTNO+" "+o1.GetNetSalary());
             Console.WriteLine(o2.EMNO);
             Console.WriteLine(o3.EMNO);
             Console.WriteLine("reverse order");
@@ -51,6 +51,7 @@ namespace Assignement01
             {
                 if (value == " ")
                     Console.WriteLine("Blank names are not allowed.");
+                    
                 else
                     name = value;
             }
@@ -79,7 +80,7 @@ namespace Assignement01
         {
             set
             {
-                if (value > 10000 && value < 50000)
+                if (value >= 10000 && value < 50000)
                     basic = value;
                 else
                     Console.WriteLine("must be between 10k to 50k range");
@@ -105,6 +106,12 @@ namespace Assignement01
                 return deptNo;
             }
 
+        }
+
+       public decimal GetNetSalary()
+        {
+            
+            return BASIC*5m*0.15m;
         }
     }
 }
